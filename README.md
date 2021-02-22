@@ -1,4 +1,4 @@
-# ATA Coffee-Backend
+# Chat Backend
 Backend for ATA Coffee Appliation
 
 ## API Documentation
