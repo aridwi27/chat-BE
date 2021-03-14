@@ -22,7 +22,6 @@ module.exports = {
     login: async (req, res) => {
         const body = req.body
         checkEmail(body.email).then(async (response) => {
-            console.log(response)
             if (response.length === 1) {
                 const checkPassword = await bycrypt.compare(body.password, response[0].password)
                 if (checkPassword === true) {
@@ -60,7 +59,6 @@ module.exports = {
           const id = req.params.id;
           modelsGetDetailProfile(id)
             .then((response) => {
-              console.log(response)
               const result = {
                 id: response[0].id,
                 name: response[0].name,
@@ -71,7 +69,6 @@ module.exports = {
                 lat: response[0].lat,
                 lng: response[0].lng
               }
-              // console.log(result)
               success(res, 200, {}, 'get detail success', result)
             })
             .catch((res) => {
