@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const http = require('http')
 const cors = require("cors");
 const socketio =require("socket.io")
+const api = require('connect-history-api-fallback')
 const db = require('./asset/config/database')
 const app = express();
 
@@ -56,7 +57,10 @@ io.on('connection', (socket) => {
     })
   })
 })
-
+app.use(api({
+  verbose:true
+}))
+app.use('/', express.static('dist'))
 server.listen(PORT || 4000, () => {
   console.log(`Service running on PORT ${PORT || 4000}`);
 })
