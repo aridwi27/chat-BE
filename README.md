@@ -1,12 +1,6 @@
 # App Chat
 Backend Chat
 
-
-## How to Running App
-- clone this github
-- open terminal then Type "npm install"
-- then type "npm run chat"
-
 ## Features
 - Login
 - Register
